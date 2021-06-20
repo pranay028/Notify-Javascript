@@ -34,7 +34,7 @@ body {
   cursor: pointer;
 }
 .add-btn:hover {
-  transition: all 300ms ease-in-out;
+  transition: all 200ms ease-out;
   transform: scale(1.2);
 }
 
@@ -86,12 +86,14 @@ body {
   /* overflow-wrap: break-word; */
   /* flex-grow: 2; */
 }
-.contents-container h4 {
+.start-text {
   font-family: "Quicksand", sans-serif;
-  position: absolute;
+  /* position: absolute; */
+  margin-top: 15rem;
   font-weight: 300;
   font-size: 1.4rem;
   top: 10rem;
+  text-align: center;
 }
 
 .icons {
@@ -131,6 +133,12 @@ body {
 .hidden {
   display: none;
 }
+/* .edit-popup {
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  z-index: 5;
+} */
 
 textarea {
   /* resize: vertical;
@@ -152,7 +160,8 @@ textarea:focus {
   outline: none;
 }
 
-.input-popup {
+.input-popup,
+.edit-popup {
   position: absolute;
   top: 35%;
   left: 25%;

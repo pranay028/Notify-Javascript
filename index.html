@@ -18,15 +18,44 @@
     <div class="add-btn">
       <i class="fas fa-plus btn"></i>
     </div>
-    <section class="contents-container">
-      <h4 class="start-text">Tap or Click " + " icon to note here.....</h4>
-      <div class="input-popup hidden">
-        <textarea class="text-input" placeholder="Type here...."></textarea>
-        <div class="popup-actions">
-          <p id="cancel">Cancel</p>
-          <p id="save">Save</p>
-        </div>
+    <div class="start-text">
+      <p>Click " + " icon to note here.....</p>
+    </div>
+    <div class="input-popup hidden">
+      <textarea
+        class="text-input"
+        onfocus=""
+        placeholder="Type here...."
+      ></textarea>
+      <div class="popup-actions">
+        <p class="cancel">Cancel</p>
+        <p class="save">Save</p>
       </div>
+    </div>
+    <div class="edit-popup hidden">
+      <textarea
+        class="edit-input"
+        onfocus=""
+        placeholder="Type here...."
+      ></textarea>
+      <div class="popup-actions">
+        <p class="cancel">Cancel</p>
+        <p class="edit">Edit</p>
+      </div>
+    </div>
+    <div class="edit-popup hidden"></div>
+    <section class="contents-container">
+      <!-- <div class="each-container">
+        <div class="inner-container">
+          <p class="text">sample note..</p>
+          <div class="icons">
+            <span class="edit-icon edit"
+              ><i class="fas fa-pencil-alt"></i
+            ></span>
+            <span class="edit-icon delete"><i class="fas fa-trash"></i></span>
+          </div>
+        </div>
+      </div> -->
     </section>
 
     <script src="script.js"></script>
