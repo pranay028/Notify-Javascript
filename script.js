@@ -8,6 +8,7 @@ const cancelEl = document.querySelectorAll(".cancel");
 const saveEl = document.querySelectorAll(".save");
 const startText = document.querySelector(".start-text");
 const editPop = document.querySelector(".edit-popup");
+const actionText = document.querySelector(".action-text");
 
 let editID;
 let editElement;
@@ -20,6 +21,18 @@ addBtn.addEventListener("click", function () {
   saveBtn.textContent = "Save";
   popupEl.classList.remove("hidden");
 });
+
+// ?   Action review text overlay
+
+const actionFunc = function (actText) {
+  actionText.classList.remove("hidden");
+  actionText.innerHTML = `${actText}.`;
+
+  setTimeout(function () {
+    actionText.textContent = "";
+    actionText.classList.add("hidden");
+  }, 1500);
+};
 
 // ? Adding item ----------
 
@@ -40,18 +53,19 @@ const addItem = function () {
         <div class="inner-container">
           <p class="text">${text}</p>
           <div class="icons">
-            <span class="edit-icon"
+            <div class="edit-icon"
               ><i class="fas fa-pencil-alt edit"></i
-            ></span>
-            <span class="edit-icon"><i class="fas fa-trash delete"></i></span>
+            ></div>
+            <div class="edit-icon"><i class="fas fa-trash delete"></i></div>
           </div>
         </div>`;
 
   element.innerHTML = html;
 
-  if (!text) return;
+  if (!text) return actionFunc("Empty Value");
   startText.classList.add("hidden");
   mainContainer.appendChild(element);
+  actionFunc("saved");
 };
 
 // ? Delete Funnction
@@ -61,6 +75,7 @@ const deleteFunc = (ele) => {
   if (mainContainer.childElementCount == 0) {
     startText.classList.remove("hidden");
   }
+  actionFunc("deleted");
 };
 
 // ? Edit Function
@@ -69,27 +84,32 @@ const editFunc = (textElement, id) => {
   editPop.classList.remove("hidden");
   const edit_save = editPop.querySelector(".edit");
   const textEdit = editPop.querySelector(".edit-input");
-  console.log(textEdit);
+  const cancel = editPop.querySelector(".cancel");
+  // console.log(textEdit);
   editID = id;
   textEdit.value = textElement.textContent;
   textEdit.addEventListener("input", function () {
     textEdit.textContent = textEdit.value;
   });
 
-  console.log(editID);
-  console.log(textEdit.innerHTML);
+  // console.log(editID);
+  // console.log(textEdit.innerHTML);
   edit_save.addEventListener("click", function () {
     const getCont = document.getElementById(`${editID}`);
-    console.log(getCont);
+    // console.log(getCont);
 
     const textEl = getCont.querySelector(".text");
-    console.log(textEl);
+    // console.log(textEl);
     textEl.textContent = textEdit.innerHTML;
 
     textEl.textContent =
       textEl.textContent == " " || textEl.textContent == ""
         ? "Empty Note - Can Delete"
         : textEl.textContent;
+    editPop.classList.add("hidden");
+    actionFunc("edited");
+  });
+  cancel.addEventListener("click", function () {
     editPop.classList.add("hidden");
   });
 };
@@ -105,8 +125,6 @@ cancelEl.forEach((cancel) => {
 // ? Save -------
 
 saveEl.forEach((save) => {
-  // if()
-
   save.addEventListener("click", addItem);
 });
 
@@ -114,8 +132,8 @@ saveEl.forEach((save) => {
 
 mainContainer.addEventListener("click", function (e) {
   // console.log(e.target);
-  console.log(e.target);
-  console.log(e.target.closest(".edit-icon"));
+  // console.log(e.target);
+  // console.log(e.target.closest(".edit-icon"));
   if (e.target == mainContainer) return;
   const targetCont = e.target.closest(".each-container");
   const contID = targetCont.getAttribute("id");
@@ -135,9 +153,9 @@ mainContainer.addEventListener("click", function (e) {
   // ?Editing container -----------
   editEl.forEach(function (edit) {
     if (e.target == edit || e.target == edit.closest(".edit-icon")) {
-      console.log(contID);
-      console.log(textEle);
-      console.log(targetCont);
+      // console.log(contID);
+      // console.log(textEle);
+      // console.log(targetCont);
       editFunc(textEle, contID);
     }
   });
