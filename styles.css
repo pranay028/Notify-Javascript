@@ -163,7 +163,6 @@ body {
 .hidden {
   display: none;
 }
-  top: 30%;
 
 ::-webkit-scrollbar {
   width: 3px;
