@@ -76,17 +76,11 @@ body {
   min-width: 5rem;
   border-radius: 5px;
   min-height: 5rem;
-  /* min-width: 14rem;
-  max-width: 15rem; */
+
   overflow: hidden;
-  /* overflow: scroll; */
-  /* max-width: 23rem; */
+
 }
-/* @media screen and (min-width: 650px) {
-  .each-container {
-    width: 20rem;
-  }
-}*/
+
 @media screen and (min-width: 900px) {
   .each-container {
     max-width: 30rem;
@@ -95,21 +89,18 @@ body {
 }
 .inner-container {
   padding: 0.5rem 0.5rem;
-  /* display: grid;
-  grid-template-columns: 1fr; */
+
   display: flex;
   flex-direction: column;
 
   justify-content: space-between;
-  /* height: 100%; */
+ 
   min-height: 100%;
 }
 .text {
-  /* max-height: 12rem;
-  min-height: 12rem; */
+ 
   max-width: 100%;
-  /* cursor: pointer; */
-  /* padding-bottom: rem; */
+
   text-align: start;
   margin-bottom: 0.5rem;
   max-height: 10rem;
@@ -138,11 +129,9 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
-  /* display: flex;
-  justify-content: space-around; */
+
   text-align: center;
-  /* justify-self: stretch; */
-}
+ 
 .icons > :first-child {
   border-right: 1px solid rgb(0, 0, 0, 0.3);
 }
@@ -153,9 +142,7 @@ body {
 .delete {
   color: rgb(195, 49, 73, 0.7);
 }
-/* .edit {
-  border-right: 1px solid rgb(0, 0, 0, 0.3);
-} */
+
 .edit-icon {
   cursor: pointer;
   transition: all ease-out 200ms;
@@ -176,12 +163,8 @@ body {
 .hidden {
   display: none;
 }
-/* .edit-popup {
-  position: absolute;
   top: 30%;
-  left: 30%;
-  z-index: 5;
-} */
+
 ::-webkit-scrollbar {
   width: 3px;
   background: transparent;
@@ -191,15 +174,13 @@ body {
   background: rgb(208, 232, 243, 0.7);
 }
 textarea {
-  /* resize: vertical;
-  resize: horizontal; */
+
   font-size: 1.3rem;
   padding: 0.5rem;
   min-width: 100%;
   min-height: 17rem;
 
-  /* max-width: 16rem; */
-  /* background: #e5e8b6; */
+
   max-height: 17rem;
   border: none;
   /* background: rgba(255, 255, 255, 0.9); */
@@ -213,9 +194,7 @@ textarea {
     #dab6fc
   );
 
-  /* background-color: blue; */
-  /* border-radius: 10px; */
-  /* margin-top: 0.5rem; */
+
 }
 textarea:focus {
   border: none;
@@ -230,16 +209,14 @@ textarea:focus {
   right: 25%;
   /* border: 2px solid white; */
   border-radius: 10px;
-  /* border: none; */
-  /* overflow-wrap: break-word;s */
+
   overflow: hidden;
 
   box-shadow: 2px 2px 4px 3px #97abb1, -2px -2px 4px 3px #97abb1;
 }
 
 .save {
-  /* color: white; */
-  /* border: 1px solid white; */
+  
   border-left: 2px solid rgba(0, 0, 0, 0.3);
 }
 
@@ -271,8 +248,7 @@ textarea:focus {
 }
 
 .action-text {
-  /* display: inline-block; */
-  /* align-content: center; */
+  
   text-align: center;
   font-family: "Quicksand", sans-serif;
   position: fixed;
@@ -285,12 +261,6 @@ textarea:focus {
   transform: translateX(calc(100vw - 55vw));
   max-width: 10rem;
   z-index: 50;
-  /* position: sticky; */
-  /* padding: ; */
+ 
 }
 
-/* @media screen and (min-width: 900px) {
-  .action-text {
-    left: 45%;
-  }
-} */
