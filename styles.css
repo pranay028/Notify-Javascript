@@ -52,6 +52,7 @@ body {
 .contents-container {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
   /* grid-template-rows: auto; */
   grid-gap: 0.5rem;
 
@@ -98,7 +99,7 @@ body {
 }
 .text {
   max-width: 100%;
-
+  letter-spacing: 1px;
   text-align: start;
   margin-bottom: 0.5rem;
   max-height: 10rem;
@@ -181,14 +182,7 @@ textarea {
   border: none;
   /* background: rgba(255, 255, 255, 0.9); */
   font-family: "Quicksand", sans-serif;
-  background-image: linear-gradient(
-    to right top,
-    #bbadff,
-    #c4affe,
-    #cbb1fe,
-    #d3b4fd,
-    #dab6fc
-  );
+  background: #c5d6d8;
 }
 textarea:focus {
   border: none;
@@ -206,9 +200,11 @@ textarea:focus {
 
   overflow: hidden;
 
-  box-shadow: 2px 2px 4px 3px #97abb1, -2px -2px 4px 3px #97abb1;
+  box-shadow: 2px 2px 1px 1px #c5d6d8, -2px -2px 1px 1px #c5d6d8;
 }
-
+.edit-popup .edit {
+  color: black;
+}
 .save {
   border-left: 2px solid rgba(0, 0, 0, 0.3);
 }
@@ -221,14 +217,7 @@ textarea:focus {
   text-align: center;
   height: 2rem;
   grid-template-rows: 1fr;
-  background-image: linear-gradient(
-    to right top,
-    #bbadff,
-    #c4affe,
-    #cbb1fe,
-    #d3b4fd,
-    #dab6fc
-  );
+  background: #c5d6d8;
   border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
 
