@@ -14,6 +14,7 @@ let editID;
 let editElement;
 
 document.addEventListener("DOMContentLoaded", getNotes);
+
 // ? adding Popup screen funtionality------
 
 addBtn.addEventListener("click", function () {
@@ -194,8 +195,9 @@ const savelocalStorage = function (note) {
   // console.log(notes);
 };
 
-let notes;
+// let notes;
 function getNotes() {
+  let notes;
   let currentID = new Date().getTime().toString();
 
   if (localStorage.getItem("notes") === null) {
@@ -213,9 +215,8 @@ function getNotes() {
         <div class="inner-container">
           <p class="text">${note}</p>
           <div class="icons">
-            <div class="edit-icon"
-              ><i class="fas fa-pencil-alt edit"></i
-            ></div>
+            <div class = "linecut" > Edit </div>
+            
             <div class="edit-icon"><i class="fas fa-trash delete"></i></div>
           </div>
         </div>`;
@@ -224,6 +225,13 @@ function getNotes() {
 
     startText.classList.add("hidden");
     mainContainer.appendChild(element);
+    const editcutBtn = document.querySelectorAll(".linecut");
+
+    editcutBtn.forEach((cutbtn) => {
+      cutbtn.addEventListener("click", function () {
+        actionFunc("Cannot edit note");
+      });
+    });
   });
 }
 
