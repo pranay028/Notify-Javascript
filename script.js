@@ -9,6 +9,8 @@ const saveEl = document.querySelectorAll(".save");
 const startText = document.querySelector(".start-text");
 const editPop = document.querySelector(".edit-popup");
 const actionText = document.querySelector(".action-text");
+const editInput = document.querySelector(".edit-input");
+// const textarea = document.querySelectorAll("textarea");
 
 let editID;
 let editElement;
@@ -19,9 +21,11 @@ document.addEventListener("DOMContentLoaded", getNotes);
 
 addBtn.addEventListener("click", function () {
   inputEl.value = "";
+
   const saveBtn = popupEl.querySelector(".save");
   saveBtn.textContent = "Save";
   popupEl.classList.remove("hidden");
+  inputEl.focus();
 });
 
 // ?   Action review text overlay
@@ -89,6 +93,7 @@ const deleteFunc = (ele) => {
 
 const editFunc = (textElement, id) => {
   editPop.classList.remove("hidden");
+  editInput.focus();
   const edit_save = editPop.querySelector(".edit");
   const textEdit = editPop.querySelector(".edit-input");
   const cancel = editPop.querySelector(".cancel");
